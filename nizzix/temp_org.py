@@ -19,7 +19,7 @@ class TempMail:
             for proxy in self.proxies:
                 try:
                     self.scraper = cloudscraper.create_scraper()
-                    response = self.scraper.post(self.mailbox_url, proxies={'http': proxy, 'https': proxy}, timeout=1)
+                    response = self.scraper.post(self.mailbox_url, proxies={'http': proxy, 'https': proxy}, timeout=5)
                     response_data = response.json()
                     self.token = response_data.get("token")
                     self.new_mailbox = response_data.get("mailbox")
@@ -27,6 +27,9 @@ class TempMail:
                         break
                 except Exception as e:
                     print(f"Proxy {proxy} failed: {e}")
+
+        # Retourne l'adresse e-mail temporaire
+        return self.new_mailbox
 
     def get_mails(self):
         if not self.token:

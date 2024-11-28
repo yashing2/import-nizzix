@@ -22,12 +22,11 @@
 '''
 An import for an EasyLife 
 
-\n\ndiscord : https://discord.gg/ftX7tXqrQp
-\ngithub : https://github.com/hackiyui/vpimport
-\ncreator : yashing2 
+\ngithub : https://github.com/yashing2/import-nizzix
+\ncreator : yaz_v2 
 
 \n\n____________________________________________________
-\n            The import VPO need import :
+\n            The import nizzix need import :
 \n____________________________________________________
 \n
 \n                    os
