@@ -5,7 +5,7 @@ setup(
     version="1.0",
     author="yaz_v2",
     author_email="discordyashing@gmail.com",
-    url="https://github.com/yashing2/nizzix-import",
+    url="https://github.com/yashing2/import-nizzix",
     description="Simple package",
     packages=['nizzix'],
     install_requires=[
