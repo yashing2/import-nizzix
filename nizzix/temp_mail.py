@@ -8,6 +8,12 @@ class temp_1secmail:
         self._email = EMail()
         self.address = self._email.address  # Adresse e-mail générée automatiquement
 
+    def __str__(self):
+        """
+        Représentation textuelle de l'objet temp_1secmail.
+        """
+        return f"Temporary Email: {self.address}"
+
     def check_inbox(self):
         """
         Récupère tous les e-mails présents dans la boîte de réception.
@@ -15,7 +21,7 @@ class temp_1secmail:
         :return: Liste des e-mails sous forme de tuples (sujet, contenu).
         """
         inbox = self._email.get_inbox()
-        return [(msg.subject, msg.body) for msg in inbox]
+        return [(msg.subject, msg.message) for msg in inbox]
 
     def get_inbox_summary(self):
         """
@@ -60,7 +66,7 @@ class temp_1secmail:
         :return: Liste des e-mails sous forme de tuples (sujet, contenu).
         """
         inbox = self._email.get_inbox()
-        return [(msg.subject, msg.body) for msg in inbox if domain in msg.from_addr]
+        return [(msg.subject, msg.message) for msg in inbox if domain in msg.from_addr]
 
     def wait_for_specific_email(self, filter_func=None, timeout=300):
         """
@@ -80,7 +86,7 @@ class temp_1secmail:
         :return: Contenu de l'e-mail sous forme de tuple (sujet, contenu).
         """
         msg = self._email.get_message(email_id)
-        return (msg.subject, msg.body) if msg else None
+        return (msg.subject, msg.message) if msg else None
 
     def count_emails(self):
         """
@@ -99,9 +105,9 @@ class temp_1secmail:
         """
         inbox = self._email.get_inbox()
         return [
-            (msg.subject, msg.body)
+            (msg.subject, msg.message)
             for msg in inbox
-            if keyword.lower() in msg.subject.lower() or keyword.lower() in msg.body.lower()
+            if keyword.lower() in msg.subject.lower() or keyword.lower() in msg.message.lower()
         ]
 
     def get_latest_email(self):
@@ -113,7 +119,8 @@ class temp_1secmail:
         inbox = self._email.get_inbox()
         if inbox:
             latest_msg = inbox[0]
-            return (latest_msg.subject, latest_msg.body)
+            # Utiliser l'attribut message pour accéder au corps du message
+            return (latest_msg.subject, latest_msg.message)  # Correction ici avec message
         return None
 
     def get_sender_emails(self):
