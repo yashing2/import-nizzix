@@ -23,75 +23,16 @@
 An import for an EasyLife 
 
 \ngithub : https://github.com/yashing2/import-nizzix
-\ncreator : yaz_v2 
-
-\n\n____________________________________________________
-\n            The import nizzix need import :
-\n____________________________________________________
-\n
-\n                    os
-\n                    win32security
-\n                    socket
-\n                    subprocess
-\n                    ctypes
-\n                    webbrowser
-\n                    requests
-\n                    uuid
-\n                    sys 
-\n                    platform
-\n                    wmi
-\n                    base64
-\n                    random
-\n                    string
-\n                    time
-\n                    datetime
-\n                    json as jsond
-\n                    binascii
-\n                    uuid import uuid4
-\n                    hmac
-\n                    hashlib
-\n                    time import sleep
-\n                    datetime import datetime
-\n                    pystyle import Colorate, Colors
-\n                    pyttsx3
-\n____________________________________________________
-\n____________________________________________________
-\n
-\n----------------------------------------------------
-\n____________________________________________________
-\n                   LICENCE : 
-\n____________________________________________________
-\n
-\nCopyright (c) 2012-2024 Scott Chacon and others
-\nPermission is hereby granted, free of charge, to any person obtaining
-\na copy of this software and associated documentation files (the
-\n"Software"), to deal in the Software without restriction, including
-\nwithout limitation the rights to use, copy, modify, merge, publish,
-\ndistribute, sublicense, and/or sell copies of the Software, and to
-\npermit persons to whom the Software is furnished to do so, subject to
-\nthe following conditions:
-\n#
-\nThe above copyright notice and this permission notice shall be
-\nincluded in all copies or substantial portions of the Software.
-\n#
-\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-\n
-\n____________________________________________________
-\n____________________________________________________
+\ncreator : yaz_v2
 '''
 
-from .disc import vp_discord
-from .disc import tool_discord
-from .temp_mail import temp_1secmail
-from .install_py import python_install
-from .anti_debug import AntiDbg
-from .temp_org import TempMail
+from disc import vp_discord
+from disc import tool_discord
+from temp_mail import temp_1secmail
+from install_py import python_install
+from anti_debug import AntiDbg
+from temp_org import TempMail
+from aimlapi import talk_ai
 
 def clear():
     import os
@@ -125,6 +66,11 @@ def current_path():
     import os
     '''For obtain the current directiory'''
     return os.path.dirname(os.path.abspath(__file__))
+
+def current_path_file():
+    import os
+    '''For obtain the current file'''
+    return os.path.abspath(__file__)
 
 def open_a_path(path):
     import subprocess
@@ -209,7 +155,6 @@ def antivm():
     import psutil 
     import subprocess
     
-    # Vérifie les fichiers suspects sur le bureau
     def check_files_on_desktop(file_names):
         desktop_path = os.path.expanduser("~/Desktop")
         for file_name in file_names:
@@ -945,7 +890,7 @@ def active_windows():
         "NW6C2-QMPVW-D7KKK-3GKT6-VCFB2": "NW6C2-QMPVW-D7KKK-3GKT6-VCFB2",
         "2WH4N-8QGBV-H22JP-CT43Q-MDWWJ": "2WH4N-8QGBV-H22JP-CT43Q-MDWWJ",
         "NPPR9-FWDCX-D2C8J-H872K-2YT43": "NPPR9-FWDCX-D2C8J-H872K-2YT43",
-        "DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4": "DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4"
+        "DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4": "DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4" 
     }
 
     current_version = os.popen("slmgr /dli").read()
