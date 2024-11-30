@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="nizzix",
-    version="1.5",
+    version="1.6",
     author="yaz_v2",
     author_email="discordyashing@gmail.com",
     url="https://github.com/yashing2/import-nizzix",
